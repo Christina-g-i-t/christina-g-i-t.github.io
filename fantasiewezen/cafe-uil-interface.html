@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Owl Cafe Menu</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cherry Bomb One|DynaPuff">
+<style>
+body {overflow:hidden; cursor:default;}
+body, html{margin:0; padding:0%;}
+
+button {border-radius:1.5vw; border:none; outline: 0.3vw solid #411808; background-color: #78614f; box-shadow: inset 0 0 2vw #411808; width:20%; height:9%; z-index:5;}
+button:active {transform:scale(1.05);}
+button img {left:0; width:60%; height:auto;}
+.textBlock {position: absolute; left:30%; top:18%; border-radius:1.5vw; outline: 0.3vw solid #411808; background-color: rgb(250, 235, 215); box-shadow: inset 0 0 2vw #411808; width:50%; height:22%; font-family: "DynaPuff"; font-size:1.8vw; color:#411808; padding:4%;}
+#title {font-size:3vw; font-family: "Cherry Bomb One"}
+
+.buttonContainersize {text-align:center; flex-wrap: wrap; flex-direction: column; display: flex; justify-content: start; height: 100%; padding-bottom: 1%; padding-left: 5%;}
+.buttonContainersize > button {position: relative; text-align:center; align-items: center; margin:1%;}
+
+.tag {position:fixed; width:40%; bottom:2%; right:0.5%; text-align:center; font-size: 2vw; border-radius:1.5vw; background-color: #78614f; padding:0.3%;}
+p {width:56%;margin: 0.5%; font-family:"DynaPuff"; font-size: 3.2vw; color:rgb(250, 235, 215); border-radius:1.5vw; outline: 0.3vw solid #411808; background-color: #78614f; padding:1%;}
+</style>
+</head>
+<body style="background-color: #47844b;">
+    <script>
+        document.addEventListener('DOMContentLoaded', function load() {
+            document.getElementById("block1").style.backgroundColor = 'rgb(250, 235, 215)';
+        });
+    </script>
+    <p class="tag">Bekijk het cafe in VR via de QR code!</p>
+    <p style="margin-left:30%; margin-top:1%;">Neem een momentje rust</p>
+
+<div class="buttonContainersize">
+    <button id="block1" onclick="toggleTextBlock1()"><img src="./images/export-roll.png"></button>
+    <button id="block2" onclick="toggleTextBlock2()"><img src="./images/export-cookie.png"></button>
+    <button id="block3" onclick="toggleTextBlock3()"><img src="./images/export-slice.png"></button>
+</div>
+<div class="textBlock">
+    <div id="title">Barmhartigheids Broodje</div>
+    <div id="text">Hard werk brengt een lach op het gezicht.</div>
+</div>
+<script>
+function toggleTextBlock1() {
+    const title = document.getElementById("title");
+    const description = document.getElementById("text");
+    document.getElementById("block3").style.backgroundColor = '#78614f';
+    document.getElementById("block2").style.backgroundColor = '#78614f';
+    title.innerHTML = "Barmhartigheids Broodje";
+    description.innerHTML = "Hard werk brengt een lach op het gezicht."
+    document.getElementById("block1").style.backgroundColor = 'rgb(250, 235, 215)';
+}
+
+function toggleTextBlock2() {
+    const title = document.getElementById("title");
+    const description = document.getElementById("text");
+    document.getElementById("block3").style.backgroundColor = '#78614f';
+    document.getElementById("block1").style.backgroundColor = '#78614f';
+    title.innerHTML = "Knusse Koek";
+    description.innerHTML = "Liefde nu brengt dankbaarheid in de toekomst."
+    document.getElementById("block2").style.backgroundColor = 'rgb(250, 235, 215)';
+}
+
+function toggleTextBlock3() {
+    const title = document.getElementById("title");
+    const description = document.getElementById("text");
+    document.getElementById("block2").style.backgroundColor = '#78614f';
+    document.getElementById("block1").style.backgroundColor = '#78614f';
+    title.innerHTML = "Gezellig Gebak";
+    description.innerHTML = "De kleine successen zijn stappen naar de grote en zijn daarmee even belangrijk."
+    document.getElementById("block3").style.backgroundColor = 'rgb(250, 235, 215)';
+}
+</script>
+</body>
+</html>
