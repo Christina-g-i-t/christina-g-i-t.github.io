@@ -26,11 +26,11 @@ var currentFace = "./images/export-default.png";
 setInterval(() => {
     var currentFace = "./images/export-eyes-closed.png";
     document.getElementById("face").src = currentFace;
-    }, 4000)
-setInterval(() => {
+    setTimeout(() => {
     var currentFace = "./images/export-default.png";
     document.getElementById("face").src = currentFace;
-    }, 4330)
+    }, 330)
+    }, 4000)
 </script>
 <div>Teachable Machine Image Model</div>
 <button id="startButton" type="button" onclick="init()" style="position: absolute; top:0; left:0; z-index:5">Start</button>
