@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+    <title>Wezen</title>
+    <meta charset="UTF-8">
+<style>
+body {overflow:hidden; cursor:default;}
+body, html{margin:0; padding:0%;}
+#face {position: absolute; z-index:-1;}
+#thought {position: absolute; z-index:2;}
+#planning {position: absolute; z-index:5;}
+div {margin-top:1vw}
+</style>
+</head>
+<body>
+<script>
+    document.addEventListener('DOMContentLoaded', function load() {
+        document.getElementById('thought').style.display = 'none';
+        document.getElementById('planning').style.display = 'none';
+    });
+</script>
+    <img id="face" style="top:0vw; width:100%; height:auto;" src="./images/export-default.png" alt="squirrel face">
+    <img id="thought" style="top:0vw; left:0vw; width:100%; height:auto;" src="./images/export-thought-ontbijt-voltooid.png" alt="thought bubble">
+    <img id="planning" style="top:0vw; width:100%; height:auto;" src="./images/wezen planning scherm.png" alt="squirrel face">
+<script>
+var currentFace = "./images/export-default.png";
+setInterval(() => {
+    var currentFace = "./images/export-eyes-closed.png";
+    document.getElementById("face").src = currentFace;
+    }, 4000)
+setInterval(() => {
+    var currentFace = "./images/export-default.png";
+    document.getElementById("face").src = currentFace;
+    }, 4330)
+</script>
+<div>Teachable Machine Image Model</div>
+<button id="startButton" type="button" onclick="init()" style="position: absolute; top:0; left:0; z-index:5">Start</button>
+<div id="webcam-container" style="position: absolute; top:0; left:10vw; z-index:5"></div>
+<div id="label-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+<script type="text/javascript">
+    var currentFace = "./images/export-default.png";
+    // More API functions here:
+    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+    // the link to your model provided by Teachable Machine export panel
+    const URL = "./model/tm-my-image-model/";
+
+    let model, webcam, labelContainer, maxPredictions;
+
+    // Load the image model and setup the webcam
+    async function init() {
+        document.getElementById("startButton").style.display = 'none';
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        // load the model and metadata
+        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+        // or files from your local hard drive
+        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        // Convenience function to setup a webcam
+        const flip = true; // whether to flip the webcam
+        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+        await webcam.setup(); // request access to the webcam
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        // append elements to the DOM
+        //document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) { // and class labels
+            labelContainer.appendChild(document.createElement("div"));
+        }
+    }
+
+    async function loop() {
+        webcam.update(); // update the webcam frame
+        await predict();
+        window.requestAnimationFrame(loop);
+    }
+
+    // run the webcam image through the image model
+    async function predict() {
+        // predict can take in an image, video or canvas html element
+        const prediction = await model.predict(webcam.canvas);
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(1);
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+                //console.log("class prediction is " + classPrediction)
+        
+        //wezen laten reageren op wat het ziet
+        if (classPrediction.includes("Pen")) {
+            if (classPrediction.includes("0.8") || classPrediction.includes("0.9") || classPrediction.includes("1.0") ){
+            var currentFace = "./images/export-default.png";
+            document.getElementById("face").src = currentFace;
+            document.getElementById('planning').style.display = 'block';
+            document.getElementById('thought').style.display = 'none';
+        }}
+        if (classPrediction.includes("Draakje")) {
+            if (classPrediction.includes("1.0")){
+            var currentFace = "./images/export-bweh.png";
+            document.getElementById("face").src = currentFace;
+            } else {
+                var currentFace = "./images/export-default.png";
+                document.getElementById("face").src = currentFace;
+            }
+        }
+        if (classPrediction.includes("Bord")) {
+            if (classPrediction.includes("1.0") ){
+            var currentFace = "./images/export-eyes-closed.png";
+            document.getElementById("face").src = currentFace;
+            document.getElementById('thought').style.display = 'block';
+            document.getElementById('planning').src = './images/wezen planning scherm checked.png';
+            }
+        }
+    } if (currentFace === true) {
+        document.getElementById("face").src = currentFace;}
+    }
+
+document.addEventListener("click", () => {
+    document.getElementById('planning').style.display = 'none';
+    document.getElementById('thought').style.display = 'none';
+});
+</script>
+
+</body>
