@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>E - Digital Garden</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Black Han Sans|Ubuntu|Aldrich">
+
+<style>
+    body {background-color: rgb(218, 211, 211);}
+    div {width: 70vw; height:20vw; font-size:4vw; margin-left:auto; margin-right:auto; margin-top:auto; text-align:center; display:flex; justify-content: center; align-items:center;}
+    div:nth-of-type(1) {font-family: "Black Han Sans", sans-serif; color:rgb(60% 60% 60%); font-weight:700; text-shadow: 0.4vw 0.3vw 0.5vw rgba(0, 0, 0, 0.5); background-color: rgb(60% 60% 60%); }
+    div:nth-of-type(2) {font-family: Ubuntu, monospace; -webkit-text-stroke-color: white; -webkit-text-stroke-width: 1px; background-image: linear-gradient(180deg in oklch, limeGreen, midnightBlue);}
+    div:nth-of-type(2) span {color:transparent;}
+    div:nth-of-type(3) {font-family: Ubuntu, monospace; background-image: url("https://cdn.pixabay.com/photo/2013/11/23/02/16/heissluftbaloone-216280_1280.jpg"); background-position: center 32%;}
+    div:nth-of-type(3) span {color:transparent; background: linear-gradient(90deg, cyan, midnightBlue); background-clip: text;}
+    div:nth-of-type(4) {font-family: Aldrich, sans-serif; color:white; text-shadow:-0.18vw -0.18vw 0 cyan, 0.18vw -0.18vw 0 magenta, 0.18vw 0.18vw 0 yellow, -0.18vw 0.18vw 0 black; background-color: blueviolet;}
+    div:nth-of-type(5) {font-family: monospace; color:white; background-image: url("https://cdn.pixabay.com/photo/2026/04/08/11/44/11-44-09-969_1280.jpg"); background-position: 80% 32%;}
+    div:nth-of-type(5) span {background: linear-gradient(90deg in oklch, lightSkyBlue, steelBlue); border: 0.2vw solid steelBlue; border-radius:5vw; box-shadow: 0 0.2vw 1.5vw white; padding:2%; padding-left:5%; padding-right:5%;}
+    div:nth-of-type(6) {background-color: white; background: conic-gradient(black 25%, white 25%, white 50%, black 50%, black 75%, white 75%, white 100%); background-size: 160px 160px; background-repeat: repeat;}
+    div:nth-of-type(6) span {font-family: monospace; color:white; mix-blend-mode: difference;}
+</style>
+</head>
+<body>
+    <div>Myst</div>
+    <div><span>Neon</span></div>
+    <div><span>Hello</span></div>
+    <div>CMYK</div>
+    <div><span>Cold</span></div>
+    <div><span>Chess</span></div>
+</body>
+</html>
+
+<!--
+body {
+  height:100dvh;
+  margin:0;
+  display:grid;
+  place-items:center;
+}
+
+a {
+  --transition-dur:1s;
+  
+  position:relative;
+  aspect-ratio:1;
+
+  display:grid;
+  place-items:center;
+  
+  background-image:
+    radial-gradient(
+      circle, 
+      rgb(234, 192, 115) 12% , 
+      rgb(255, 158, 164) 30%, 
+      rgb(203, 92, 90) 70%,
+      transparent 71%);
+  background-repeat:no-repeat;
+  background-position:50% 50%;
+  border-radius:50%;
+
+  transition:1s;
+
+  background-size:100% 100%;
+
+  &:hover {
+    background-size:0 0;
+  }
+}
+
+
+
+a::before {
+  content:"";
+
+  position:absolute;
+  inset:-3em;
+  
+  background-color:#0f08;
+  background-image: radial-gradient(circle, rgb(234, 192, 115) 12% , rgb(255, 158, 164) 30%, rgb(203, 92, 90) 80%);
+
+    --g:/37.02% 37.02% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat; 
+  mask: 100% 50% var(--g),65.451% 97.553% var(--g),9.549% 79.389% var(--g),9.549% 20.611% var(--g),65.451% 2.447% var(--g),radial-gradient(100% 100%,#000 25.476%,#0000 calc(25.476% + 1px));
+  
+  scale:0;
+  transition:var(--transition-dur);
+
+  z-index:-1;
+
+}
+
+a:hover::before {
+  scale:1;
+}
+  -->

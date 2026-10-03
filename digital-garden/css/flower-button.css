@@ -1,0 +1,86 @@
+#field {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height:14em;
+    border-radius: 1vw;
+    outline: 0.8vw solid rgb(106, 33, 11);
+    background-image: url('https://cdn.pixabay.com/photo/2014/04/03/13/32/earth-312794_1280.jpg') !important;
+}
+#flower {
+    font-family: fantasy;
+    font-size:1vw;
+    text-align:center;
+    color: rgb(255, 244, 199);
+    text-shadow: 0.2vw 0.1vw 0.1vw rgb(124, 65, 31);
+    height:8em;
+    min-width:10px;
+    margin-top:1.2%;
+    margin-left:8%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border:none;
+    width:auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transform: scale(1);
+    transition:350ms;
+}
+#flower:hover {
+    font-size:1.6vw;
+    color: rgb(106, 33, 11);
+    text-shadow: 0.2vw 0.1vw 0.1vw rgb(255, 244, 199);
+}
+#flower:active {
+    transform: scale(0.8);
+}
+
+/*transitie verbeterd met hulp van een docent*/
+#flower {
+  --transition-dur:0.7s;
+  
+  position:relative;
+  
+  background-image:
+    radial-gradient(
+      circle, 
+     rgb(123, 159, 39) 8%, rgb(57, 106, 53) 14%, transparent 15%);
+  background-repeat:no-repeat;
+  background-position:50% 50%;
+  border-radius:50%;
+
+  transition:1s;
+
+  background-size:100% 100%;
+
+  &:hover {
+    background-size:0 0;
+  }
+}
+
+#flower::before {
+  content:"";
+
+  position:absolute;
+  inset:-3em;
+  
+  background-color:rgb(255, 158, 164);
+  background-image: radial-gradient(circle, rgb(234, 192, 115) 12% , rgb(255, 158, 164) 30%, rgb(203, 92, 90) 80%);
+
+  /*code voor de bloemvorm via https://css-generators.com/flower-shapes/*/
+    --g:/37.02% 37.02% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat; 
+  mask: 100% 50% var(--g),65.451% 97.553% var(--g),9.549% 79.389% var(--g),9.549% 20.611% var(--g),65.451% 2.447% var(--g),radial-gradient(100% 100%,#000 25.476%,#0000 calc(25.476% + 1px));
+  
+  scale:0;
+  transition:var(--transition-dur);
+
+  z-index:-1;
+
+}
+
+#flower:hover::before {
+  scale:0.6;
+}

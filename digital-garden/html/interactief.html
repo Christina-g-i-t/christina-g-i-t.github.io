@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="nl" id="htmlTheme" class="lightTheme">
+<head>
+    <title>Interactief - Digital Garden</title>
+    <meta charset="UTF-8">
+    <meta songName="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg">
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/grid-text-containers-base.css">
+    <link rel="stylesheet" href="../css/flower-button.css">
+<style>
+.textContainer img {
+    background-color: transparent;
+    border:none;
+}
+.timeContainer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align:center;
+}
+#currentTime {
+    min-width:200px;
+    width:5em;
+    border: 0.3vw solid rgb(85, 131, 210);
+    outline: 0.3vw solid rgb(57, 79, 152);
+    border-radius: 0.5vw;
+    background-color: black;
+    background: radial-gradient(rgb(194, 169, 169), black);
+    color: rgb(74, 219, 255);
+    font-size:clamp(2rem, 2vw, 3rem);
+    font-weight: bold;
+}
+/**************************
+* MARK: Audio player 
+**************************/
+.bgBg {
+    background-image: url('https://cdn.pixabay.com/photo/2017/08/15/08/23/stars-2643089_1280.jpg') !important;
+    background-position: 50% 10%;
+}
+#trackImg {
+    width:10em;
+    height:auto;
+    margin:0;
+    float:none;
+    animation: spin 8s linear infinite;
+}
+.playTheme {
+    background-color: green;
+    outline: 0.3vw solid var(--light-accentkleur);
+}
+.audioButton {
+    display:inline;
+    min-width:20px;
+    width:2em;
+    height:auto;
+    margin-left: 0.5em;
+}
+.time {
+    display:inline;
+    background-image: none;
+    border:none;
+}
+#playerTimeContainer {
+    display:inline;
+    min-width:40em;
+}
+@keyframes spin {
+        0% {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+}
+audio {
+  width:100%;
+  padding-top:1em;
+}
+audio::-webkit-media-controls-current-time-display {
+  display: none;
+}
+audio::-webkit-media-controls-time-remaining-display {
+  display: none;
+}
+audio::-webkit-media-controls-play-button {
+  display: none;
+}
+audio::-webkit-media-controls-panel {
+  -webkit-justify-content: center;
+}
+/**************************
+* MARK: Color picker 
+**************************/
+#colorPicker {
+    float:right;
+    border: none;
+    background-color: var(--dynamic-color);
+    height:5em;
+    width:5em;
+    margin:3%;
+}
+#dynamicTextColor {
+    text-shadow: none;
+    background-image: none;
+    border: none;
+}
+#dynamicBg {
+    transition: all 250ms;
+    --dynamic-color: white;
+    background-image: none;
+    background-color: contrast-color(var(--dynamic-color));
+}
+</style>
+</head>
+<body style="background-color:rgb(95, 90, 91)">
+    <script>
+        document.addEventListener('DOMContentLoaded', function load() {
+            document.getElementById("trackImg").style.animationPlayState = "paused";
+            pickSong(songList);
+        });
+    </script>
+<nav>
+    <a class="btn-style" href="../index.html">Home</a>
+    <a class="btn-style here" >Interacties</a>
+    <a class="btn-style" href="./characters.html">Characters</a>
+    <a class="btn-style" href="./inspiration-garden.html">Garden</a>
+    <a class="btn-style" href="./aantekeningen.html">Aantekeningen</a>
+    <a class="btn-style" href="./over.html">Over</a>
+</nav>
+    <article class="textContainer introText">
+    <h1>Technische interacties</h1>
+    <p>Kleine simpele experimenten die het (merendeels) doen.</p>
+    </article>
+
+<div class="gridColumnsContainer">
+
+    <article class="textContainer timeContainer">
+    <h1>Vandaag is het:</h1>
+    <p id="currentTime">...</p>
+    <p id="currentDate">...</p>
+    </article>
+    <script src="../js/update-date-time.js"></script>
+
+    <article class="textContainer">
+        <h1>Bloemen</h1>
+        <div id="field">
+        <p id="flower">Placeholder</p>
+        </div>
+    </article>
+
+    <article class="textContainer">
+    <h1>Delta Aero Vibes -<br>Powered by: Humans<br>(en sterke compression)</h1>
+    <p class="bgBg">
+    <img id="trackImg" src="../images/export-spinvis.png">
+    <span id="trackName" style="min-height:3em"> >Wachten op input...</span>
+        <button class="btn-style audioButton" onclick="pickPrevSong(songList)"><</button>
+        <button class="btn-style audioButton" id="playButton" onclick="togglePlay()">▶</button>
+        <button class="btn-style audioButton" onclick="pickNextSong(songList)">></button>
+        <span id="playerTimeContainer">
+        <span id="currentSongTime" class="time">0:00</span> : <span id="durationTime" class="time">0:00</span>
+        </span><br>
+        <audio id="trackAudio" controls src=""></audio><br>
+        <!--
+        <input type="range" id="seek-slider" min="1" max="100" value="0" onchange="seekTo()">
+        <input type="range" id="volume-slider" max="100" value="100">
+        -->
+        Free-to-use achtergrondmuziek via Opentracks (voormalig DOVA-SYNDROME)
+    </p>
+    </article>
+    <script src="../js/audio-player.js"></script>
+
+    <article class="textContainer">
+        <h1>Prehistorische entertainment</h1>
+        <p>Verouderd marquee element, maar zeer entertaining.</p>
+            <marquee
+    style="border: 0.3vw solid rgb(85, 131, 210); outline: 0.3vw solid rgb(57, 79, 152); border-radius: 0.5vw; background-color:black; background: radial-gradient(rgb(194, 169, 169), black); color: rgb(74, 219, 255); font-size: 1em; font-weight:bold;"
+    direction="down"
+    width="250"
+    height="200"
+    behavior="alternate"
+    class="outlined">
+    <marquee behavior="alternate">DVD</marquee>
+    </marquee>
+    </article>
+
+    <article class="textContainer">
+        <h1>Color picker</h1>
+        <input id="colorPicker" type="color"/>
+        <p id="dynamicBg"><span id="dynamicTextColor">hex #xxxxxx<br>rgb(x, x, x)</span></p>
+    </article>
+    <script src="../js/color-picker-display.js"></script>
+
+    <article class="textContainer">
+        <h1>D20 dobbelsteen</h1>
+        <p>Krijg een random getal tussen 1 en 20.</p>
+        <button id="dice" class="btn-style">Gooi</button>
+    </article>
+    <script src="../js/dice.js"></script>
+
+    <article class="textContainer">
+        <h1>Aaibare Alaskan Malamute</h1>
+        <p>In het Copper/Ahtna chapter in Alaska laat deltakarakter Tagha aan Rosie de Iditarod Trail Hondenslede Race zien.<br><br>
+            - Druk op de hond om de interactie te beginnen!<br>
+            - Maak een aaibeweging over de hond met de muis :D</p>
+        <img id="deltaDog" onclick="setPose(poseOptions)" src="../images/dog/export-dog-tail-default-open.png">
+    </article>
+    <script src="../js/pet-the-dog.js"></script>
+
+</div>
+<button id="lightDark" class="btn-style">Light/Dark!</button>
+<button id="btt" class="btn-style">Back to top!</button>
+<script src="../js/back-to-top.js"></script>
+<script src="../js/light-dark-theme-switch.js"></script>
+<img class="backgroundImg" src="https://cdn.pixabay.com/photo/2017/08/15/08/23/stars-2643089_1280.jpg" alt="Space">
+<img class="backgroundImg" style="filter: saturate(0.1); opacity: 0.2;" src="https://cdn.pixabay.com/animation/2024/05/22/19/11/19-11-53-681_512.gif" alt="Space">
+</body>
+</html>

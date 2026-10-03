@@ -1,0 +1,179 @@
+@font-face {font-family: First Coffee; src: url('../fonts/First Coffee.ttf');}
+@font-face {font-family: Yusei Magic; src: url('../fonts/YuseiMagic-Regular.ttf');}
+:root {
+cursor: url('../images/cursor-images/export-cursor-default-rosie.png'), default;
+--light-hoofdkleur: rgb(85, 131, 210);
+--light-outlinekleur: rgba(57, 79, 152, 0.9);
+--light-accentkleur: rgba(19, 94, 31, 0.9);
+--light-borderkleur: rgba(174, 188, 236, 0.8);
+--light-tekstkleur: rgb(233, 239, 239);
+
+--dark-hoofdkleur: rgb(132, 75, 85);
+--dark-rood-outlinekleur: rgba(94, 19, 43, 0.9);
+--dark-groen-schaduwkleur: rgba(28, 60, 36, 0.9);
+--dark-knop-shine: rgb(76, 137, 75);
+--dark-borderkleur: rgba(236, 165, 165, 0.8);
+--dark-tekstkleur: rgb(237, 223, 223);
+}
+body, html {
+    margin:0;
+    padding:0;
+    scrollbar-color: light-dark(var(--light-outlinekleur), var(--dark-hoofdkleur)) light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+}
+body {
+    background-color: LavenderBlush;
+    overflow-x: hidden;
+}
+a, button, select, summary, .btn-style {
+    cursor: url('../images/cursor-images/export-cursor-pointer-rosie.png'), default;
+}
+
+a:focus, button:focus, select:focus, summary:focus, .btn-style:focus{
+  outline: 0.1em solid white;
+}
+
+.lightTheme {
+  color-scheme: light;
+}
+.darkTheme {
+  color-scheme: dark;
+}
+.backgroundImg {
+    position: fixed;
+    top:0;
+    bottom: auto;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+    min-width: 100vw;
+    min-height:100vh; 
+    z-index:-2;
+}
+
+a {
+    color: light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    text-decoration:none;
+}
+
+h1 {
+    font-family: First Coffee;
+    font-size:clamp(2rem, 2vw, 3rem);
+    font-weight: normal;
+    text-align: center;
+    color: light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    text-shadow: 0.2vw 0.1vw 0.1vw light-dark(var(--light-outlinekleur), var(--dark-rood-outlinekleur));
+    border-radius:0.5vw 0.5vw 1.5vw 1.5vw;
+    border: 0.3vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    border-bottom: 0.6vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    background-image: light-dark(linear-gradient(170deg in oklch, var(--light-outlinekleur), var(--light-accentkleur), var(--dark-groen-schaduwkleur)), linear-gradient(170deg in oklch, var(--dark-hoofdkleur), var(--dark-rood-outlinekleur)));
+    padding:1.2%;
+    margin-top: 0;
+    z-index:2;
+}
+
+#menu, nav {
+    position:fixed;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    flex-direction: row;
+    flex-wrap:wrap;
+    text-align:center;
+    justify-content: center;
+    font-family:"First Coffee";
+    top: 1vw;
+    width:100%;
+    height:2.9vw;
+    /*
+    background-color:light-dark(var(--light-hoofdkleur), var(--dark-hoofdkleur));
+    background-image: linear-gradient( 102deg, rgba(255,255,255, 0) 20%, rgba(255,255,255, 0.1) 40%, rgba(232, 255, 253, 0.3), rgba(255,255,255, 0) 85% );
+    */
+    color: light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    margin:0;
+    z-index:90;
+    @media (width < 30em) {
+        width: auto;
+        display:flex;
+        justify-content: space-evenly;
+    }
+}
+.here {
+    background-image:none !important;
+    color: light-dark(var(--light-tekstkleur), var(--dark-tekstkleur)) !important;
+    text-shadow: 0.1em 0.1em 0.1em light-dark(var(--light-outlinekleur), var(--dark-hoofdkleur)) !important;
+    background-image: light-dark(linear-gradient(170deg in oklch, var(--light-outlinekleur), var(--light-accentkleur)), linear-gradient(in oklch, rosybrown, var(--dark-hoofdkleur))) !important;
+    box-shadow: inset 0 0 0.3em 0.05em light-dark(var(--light-outlinekleur), var(--dark-groen-schaduwkleur)) !important;
+    cursor: url('../images/cursor-images/export-cursor-default-rosie.png'), default;
+        @media (width < 30em) {
+        transform: scale(1) !important;
+    }
+}
+.btn-style {
+    display:flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family:"First Coffee";
+    font-size: 1.7em;
+    /*font-size:clamp(1.7rem, 1.7vw, 1.5rem);*/
+    @media (width < 50em) {
+        font-size: 1.2em;
+    }
+    margin: 0.1em;
+    color: light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    min-width: 150px;
+    width:8em;
+    max-width:40vw;
+    min-height:30px;
+    height:1.4em;
+    padding: 1% !important;
+    margin-left:2vw;
+    border-radius: 0.5vw;
+    background-color: transparent;
+    /*
+    background:light-dark(
+    radial-gradient(var(--light-outlinekleur) 20%, transparent 70%),
+    linear-gradient(to bottom left, var(--light-hoofdkleur), var(--light-borderkleur), var(--light-hoofdkleur))
+    radial-gradient(var(--dark-outlinekleur) 20%, transparent 70%),
+    linear-gradient(to bottom left, var(--dark-groen-schaduwkleur), var(--dark-knop-shine), var(--dark-groen-schaduwkleur)));
+    */
+    background-image: light-dark(linear-gradient(to bottom left, var(--light-hoofdkleur), rgb(90, 110, 176), var(--light-borderkleur), var(--light-outlinekleur), var(--light-hoofdkleur)), linear-gradient(to bottom left, var(--dark-groen-schaduwkleur), var(--dark-knop-shine), var(--dark-groen-schaduwkleur)));
+    border:0.15vw solid light-dark(var(--light-borderkleur), var(--dark-borderkleur));
+    outline: 0.2em solid light-dark(var(--light-outlinekleur), var(--dark-groen-schaduwkleur));
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    text-shadow: 0.1em 0.1em 0.1em light-dark(var(--light-outlinekleur), var(--dark-groen-schaduwkleur));
+    box-shadow: inset 0 0 2vw light-dark(rgba(57, 79, 152, 0.5), rgba(28, 60, 36, 0.5));
+    transform: scale(1);
+} 
+.btn-style:hover:not(.here) {
+    box-shadow: inset 0 0 0.5vw 0.2vw light-dark(var(--light-borderkleur), var(--dark-borderkleur));
+    transform: scale(1.03, 1.04);
+}
+.btn-style:active:not(.here) {
+    transition: all 50ms;
+    transform: scale(0.9)
+}
+#btt {
+    position: fixed;
+    z-index: 5;
+    right:1em;
+    bottom:1.5em;
+    @media (width < 50em) {
+        bottom:3.5em;
+    }
+}
+#lightDark {
+    position: fixed;
+    z-index: 5;
+    right:1em;
+    bottom:3.5em;
+    @media (width < 50em) {
+        bottom:5.5em;
+    }
+}
+button {
+    background-color: transparent;
+}
+button a {
+    width:100% !important;
+}

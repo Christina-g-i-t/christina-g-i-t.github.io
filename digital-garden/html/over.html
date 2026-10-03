@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="nl" id="htmlTheme" class="lightTheme">
+<head>
+    <title>Over - Digital Garden</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg">
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/grid-text-containers-base.css">
+<style>
+h1 {margin-bottom:5vw;}
+.textContainer {width:60vw;}
+.introText {margin-top: 7vw; overflow:hidden;}
+.marquee {
+    transform: translateX(100%);
+    animation: scroll-left 8s linear infinite;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width:20vw;
+    padding:2%;
+    overflow:visible
+}
+.marquee:hover {
+	animation-play-state: paused;
+}
+.longMarquee {
+    animation: scroll-left-long 8s linear infinite;
+}
+.smallMarqueeBoxText {
+    width: 24.8vw;
+}
+.marqueeBox {
+    position:relative;
+    text-align:center;
+    width:47%;
+    height:18vw;
+    border: 0.15vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    border-bottom: 0.4vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    border-radius: 0.5vw;
+    background-image: light-dark(linear-gradient(170deg in oklch, var(--light-outlinekleur), var(--light-accentkleur)), linear-gradient(170deg in oklch, var(--dark-hoofdkleur), var(--dark-rood-outlinekleur)));
+    margin-bottom: 3vw;
+    overflow:hidden;
+    float:left;
+}
+.marqueeBox img {
+    width:auto;
+    height:14vw;
+    margin-right:0;
+}
+.marqueeBox span {
+    font-size: 2vw;
+}
+@keyframes scroll-left {
+                0% {transform: translateX(150%);}
+                100% {transform: translateX(-155%);}
+            }
+@keyframes scroll-left-intermediate {
+                0% {transform: translateX(150%);}
+                100% {transform: translateX(-400%);}
+            }
+@keyframes scroll-left-long {
+                0% {transform: translateX(150%);}
+                100% {transform: translateX(-470%);}
+            }
+.marquee img {
+    height:4vw;
+    width:auto;
+    margin-right: 0.5vw;
+}
+.stampImg {
+    border:none !important;
+    background-image:linear-gradient(170deg in oklch, rgb(200, 208, 233), rgb(212, 230, 224), rgb(197, 219, 200));
+    margin-right: 0.3vw;
+}
+.intermediateMarquee {
+    animation: scroll-left-intermediate 10s linear infinite;
+}
+.intermediateMarquee img {
+    height:10vw;
+}
+.rightSideBox {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height:32vw;
+    float: right;
+}
+.awardBadge {
+    position: absolute;
+    transform: rotate(20deg);
+    right: 4.2vw;
+    top: 5.8vw;
+    width:5vw;
+    height:auto;
+    border-radius: 50%;
+    text-align: center;
+    color: rgb(97, 76, 0);
+    text-shadow: 0.2vw 0.1vw 0.1vw rgb(255, 243, 190);
+    background-image: linear-gradient(-32deg in oklch, rgb(125, 89, 12), rgb(164, 136, 31) 20%, rgb(255, 243, 190) 50%, rgb(236, 214, 117), rgb(188, 157, 65) 75%, rgb(164, 136, 31) 80%, rgb(125, 89, 12));
+}
+.listContainer {
+    display:flex;
+    flex-direction:row;
+    overflow-x:scroll;
+    overflow-y:hidden;
+}
+.listContainer div {
+    font-family: First Coffee, Yusei Magic;
+    text-align: center;
+    background-image: light-dark(linear-gradient(170deg in oklch, var(--light-outlinekleur), var(--light-accentkleur)), linear-gradient(170deg in oklch, var(--dark-hoofdkleur), var(--dark-rood-outlinekleur)));
+    border: 0.3vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    border-bottom: 0.6vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    border-radius:0.5vw;
+    padding:0.7%;
+    padding-left:2.5%;
+    padding-right:2.5%;
+    margin:1.4vw;
+    margin-right: 0.3vw;
+    float:none;
+}
+.listContainer img {
+    height:9vw;
+    margin-right:0;
+}
+#peakList {
+    width:38em;
+}
+#peakList div {
+    margin-bottom: 3vw;
+}
+.recentImg {
+    transform: scale(1);
+    transition: 550ms;
+}
+.recentImg:hover{
+    transform: scale(1.65);
+}
+</style>
+</head>
+<body>
+<nav>
+    <a class="btn-style" href="../index.html">Home</a>
+    <a class="btn-style" href="./interactief.html">Interacties</a>
+    <a class="btn-style" href="./characters.html">Characters</a>
+    <a class="btn-style" href="./inspiration-garden.html">Garden</a>
+    <a class="btn-style" href="./aantekeningen.html">Aantekeningen</a>
+    <div class="btn-style here">Over</div>
+</nav>
+<article class="textContainer introText"><h1>Stuff die cool is</h1>
+    <div class="marqueeBox rightSideBox" style="float:left; height:24vw;"><span>Recente tekening:</span>
+        <img class="recentImg" src="../images/export-neuro-evil-castlefest.png">
+        Neuro & Evil bij Castlefest.
+    </div>
+
+    <div class="marqueeBox rightSideBox"><span>Award voor<br>swaggiest drip:</span>
+        <img src="../images/xr-omgeving-rondlopen.png"><br>
+        Appel karakter in de supermarkt voor Ontwikkelen Voor Opkomende Tech vorig schooljaar.
+        <span class="awardBadge">#1</span>
+    </div>
+
+
+
+    <div class="marqueeBox"><span class="smallMarqueeBoxText">Favoriete fanart chibi's 2020-2023</span>
+    <div class="marquee longMarquee">
+        <img src="../images/chibis/export-ayaka-chibi.png">
+        <img src="../images/chibis/export-carole-chibi.png">
+        <img src="../images/chibis/export-dehya-chibi.png">
+        <img src="../images/chibis/export-faruzan-chibi.png">
+        <img src="../images/chibis/export-fischl-chibi.png">
+        <img src="../images/chibis/export-horb-seele-chibi.png">
+        <img src="../images/chibis/export-hoth-mei-chibi.png">
+        <img src="../images/chibis/export-keqing-chibi.png">
+        <img src="../images/chibis/export-layla-chibi.png">
+        <img src="../images/chibis/export-lynette-ancient-chibi.png">
+        <img src="../images/chibis/export-navia-chibi.png">
+        <img src="../images/chibis/export-pardo-chibi.png">
+        <img src="../images/chibis/export-sucrose-chibi.png">
+        <img src="../images/chibis/export-susannah-chibi.png">
+        <img src="../images/chibis/export-thoma-chibi.png">
+        <img src="../images/chibis/export-bronya-chibi.png">
+    </div>
+    De meeste zijn oud, maar nog steeds cute.
+    </div>
+
+    <div class="marqueeBox rightSideBox"><span>Award meest<br>random reference:</span>
+        <img src="../images/export-birdbrain-cat.png"><br>
+        Kataoke cat in BIRDBRAIN voor Ontwikkelen Voor Gedragsontwikkeling vorig schooljaar.
+        <span class="awardBadge">#1</span>
+    </div>
+
+    <div class="marqueeBox rightSideBox" style="float:left;"><span>Award voor<br>sterkste aura:</span>
+        <img src="../images/img_evil_look_of_superiority.jpg"><br>
+        Evil Neuro-sama.
+        <span class="awardBadge">#1</span>
+    </div>
+
+    <div class="marqueeBox" style="float:right"><span class="smallMarqueeBoxText">Coolste CMD'ers gelinkt</span>
+    <div class="marquee">
+        <a href="http://createmyidea.nl/"><img class="stampImg" src="../images/stamp-joelle.png"></a>
+        <a href="https://hollow-purple.nl/"><img class="stampImg" src="../images/stamp-danial.png"></a>
+        <a href="https://gardenbyesmee.nl/"><img class="stampImg" src="../images/stamp-esmee.gif"></a>
+        <a href="https://christina.keultjes.net/digital-garden/index.html"><img class="stampImg" src="../images/stamp-delta.png"></a>
+    </div>
+    Stamps gemaakt via https://stamp-studio.wasmer.app
+    </div>
+
+    <div class="marqueeBox"><span class="smallMarqueeBoxText">Pen schetsen dit jaar</span>
+    <div class="marquee intermediateMarquee">
+        <img src="../images/pen/img_crelly-pen.jpg">
+        <img src="../images/pen/img_evilyn-pen.jpg">
+        <img src="../images/pen/img_kiana-pen.jpg">
+        <img src="../images/pen/img_layla-pen.jpg">
+        <img src="../images/pen/img_lynette-pen.jpg">
+        <img src="../images/pen/img_mai-pen.jpg">
+        <img src="../images/pen/img_miabella-pen.jpg">
+        <img src="../images/pen/img_navia-pen.jpg">
+        <img src="../images/pen/img_noelle-winter-fenrir-pen.jpg">
+        <img src="../images/pen/img_sandrone-pen.jpg">
+
+    </div>
+    </div>
+</article>
+
+<br><br><br><br>
+<div class="gridColumnsContainer">
+<article class="textContainer"><br>
+<table>
+<span>Creator</span><br><img id="char-img-1" src="../images/export-my-char.png" style="background-image: url('../images/img_school.jpg'); background-position: 19%; float:right;">
+<tr>
+    <th>Delta</th>
+    <td>Discovery</td>
+</tr>
+<tr>
+    <th>Thuisstad</th>
+    <td>Amsterdam (Nederland)</td>
+</tr>
+<tr>
+    <th>Verjaardag</th>
+    <td>10 Maart</td>
+</tr>
+<tr>
+    <th>Delta release versie</th>
+    <td>∞</td>
+</tr>
+<tr>
+    <th>Favoriete kleur</th>
+    <td class="favColor" style="color: rgb(32, 178, 171)">rgb(32, 178, 171)</td>
+</tr>
+</table>
+<table class="lowerTable">
+<tr>
+    <th>Ontwerp uitleg</th>
+    <td>Allerlei redenen die zeer doordacht waren jazeker - 2025</td>
+</tr>
+<tr>
+    <th>Fun facts</th>
+    <td>- Cringe.</td>
+</tr>
+</table></article>
+
+<article class="textContainer"><br>
+<table>
+<span>Site mascotte: Rosie</span><br><img src="../images/export-rosie.png" style="background-image: url('../images/cover-almere-hbid01.jpg')">
+<tr>
+    <th>Delta</th>
+    <td>Discovery</td>
+</tr>
+<tr>
+    <th>Thuisstad</th>
+    <td>Almere (Nederland)</td>
+</tr>
+<tr>
+    <th>Verjaardag</th>
+    <td>14 Maart</td>
+</tr>
+<tr>
+    <th>Delta release versie</th>
+    <td>1.0</td>
+</tr>
+<tr>
+    <th>Favoriete kleur</th>
+    <td class="favColor" style="color: rgb(188, 143, 143)">rgb(188, 143, 143)</td>
+</tr>
+</table>
+<table class="lowerTable">
+<tr>
+    <th>Ontwerp uitleg</th>
+    <td>Uitgebreide uitleg op de characters pagina.</td>
+    </td>
+</tr>
+<tr>
+    <th>Fun facts</th>
+    <td>- Discoverer van deltas.</td>
+</tr>
+</table>
+</article>
+</div>
+
+<div id="peakList" class="textContainer"><br>
+        <h1>Peak...</h1>
+        <h2>Onderwerpen</h2>
+    <div class="listContainer">
+        <div>Geologie<br><img src="../images/export-globus.png"></div>
+        <div>Games<img src="../images/rosie-in-game.png"></div>
+        <div>Coderen<img src="../images/export-rosie-chibi-snow.png"></div>
+        <div>Tekenen<img src="../images/img_miabella_awkward_smile.jpg"></div>
+        <div>Character design<img src="../images/export-croissant-chan.png"></div>
+        <div>J-fashion<img src="../images/export-slinky-en-rosie-kerst-2025.png"></div>
+        <div>Onderzoek doen<img src="../images/export-rosie-searchsearch.png"></div>
+    </div>
+        <h2>Games</h2>
+    <div class="listContainer">
+        <div>Minecraft<img src="../images/cursor-images/export-cursor-default-rosie.png" style="image-rendering: pixelated"></div>
+        <div>Tomb Raider 2</div>
+        <div>Honkai Impact 3rd Part 1<img src="../images/chibis/export-hoth-mei-chibi.png"></div>
+        <div>Genshin Impact 1.0-4.5<img src="../images/chibis/export-sucrose-chibi.png"></div>
+        <div>Civ 4</div>
+    </div>
+        <h2>Series</h2>
+    <div class="listContainer">
+        <div>Winx S 1-3</div>
+        <div>Fullmetal Alchemist (2003)</div>
+    </div>
+        <h2>Manga</h2>
+    <div class="listContainer">
+        <div>Kaguya-sama: Love is War</div>
+        <div>Silent Witch</div>
+        <div>Alles dat is geillustreerd door Shota Sirokuma</div>
+    </div>
+        <h2>Streamers</h2>
+    <div class="listContainer">
+        <div>Vedal987<br><img src="../images/export-neuro-heart-hat.png"></div>
+        <div>CerberVT<br><img src="../images/export-cerber.png"></div>
+    </div>
+        <h2>Tekenaars online</h2>
+    <div class="listContainer">
+        <div>LavenderTowne</div>
+        <div>TryTryAgain</div>
+        <div>Cc_kawaii</div>
+        <div>Chuwubbycheeks</div>
+        <div>Yoaihime</div>
+        <div>Fresh_bobatae</div>
+        <div>Fawnettle</div>
+        <div>Viwitched_art</div>
+        <div>Teabag.cartoon/Teabag.illustrations</div>
+        <div>Flower.bomb.v</div>
+    </div>
+        <h2>Dieren</h2>
+    <div class="listContainer">
+        <div>Hond</div>
+        <div>Vos</div>
+        <div>Zeekoe</div>
+        <div>Dromedaris</div>
+        <div>Geit</div>
+        <div>Hert</div>
+    </div>
+        <h2>Quotes</h2>
+    <div class="listContainer" style="flex-direction: column;">
+        <div>"A designer knows he has reached perfection, not when he has nothing left to add, but when he has nothing left to take away."<br>- Antoine de Saint-Exupéry</div>
+    </div>
+    <br>
+</div>
+<button id="lightDark" class="btn-style">Light/Dark!</button>
+<button id="btt" class="btn-style">Back to top!</button>
+<img class="backgroundImg" src="https://cdn.pixabay.com/photo/2024/02/24/20/54/books-8594725_1280.jpg" alt="Bookshelf">
+<script src="../js/back-to-top.js"></script>
+<script src="../js/light-dark-theme-switch.js"></script>
+</body>
+</html>

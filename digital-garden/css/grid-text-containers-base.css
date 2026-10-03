@@ -1,0 +1,123 @@
+.gridColumnsContainer {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(40em, 1fr));
+    justify-content: center;
+}
+.gridColumnsContainer > * {
+    top:0
+}
+span:not(tr) {
+    display: block;
+    font-family: First Coffee, Yusei Magic;
+    font-size:clamp(1.8rem, 1.8vw, 2.8rem);
+    width:100%;
+    height:auto;
+    margin-left:1vw;
+    border-radius:0.5vw 0.5vw 1.5vw 1.5vw;
+    border: 0.3vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    border-bottom: 0.6vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    background-image: light-dark(linear-gradient(170deg in oklch, var(--light-outlinekleur), var(--light-accentkleur), var(--dark-groen-schaduwkleur)), linear-gradient(170deg in oklch, var(--dark-hoofdkleur), var(--dark-rood-outlinekleur)));
+    padding-left:1%;
+    padding:1.5%;
+}
+.textContainer, article {
+    font-family: Yusei Magic, Sans-Serif;
+    /*font-size: 1.2vw*/
+    font-size: clamp(1rem, 1vw, 2rem);
+    font-weight:400;
+    color: light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    text-shadow: 0.2vw 0.1vw 0.1vw light-dark(var(--light-outlinekleur), var(--dark-rood-outlinekleur));
+    margin:auto;
+    width:80%;
+    min-width: 300px;
+    border-radius:1.5vw;
+    background-image: light-dark(
+        repeating-linear-gradient(
+            45deg in oklch,
+            rgba(85, 204, 210, 0.4) 50px,
+            rgba(151, 218, 103, 0.3) 250px,
+            rgba(85, 204, 210, 0.4) 300px
+        ),
+        linear-gradient(
+            to bottom right,
+            rgb(159, 109, 97),
+            rgba(245, 200, 200, 0.7),
+            rgb(159, 109, 97))
+    );
+    backdrop-filter: blur(1.8px);
+    box-shadow: 0.3vw 0.5vw 1.5vw light-dark(var(--light-outlinekleur), var(--dark-rood-outlinekleur));
+    border: 0.25em solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    border-bottom: 0.6vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    padding-left:1%;
+    padding-right:1%;
+    margin-bottom:2em;
+}
+.textContainer:not(.introText) {
+    width:30em;
+    max-width:90vw;
+    overflow:hidden;
+}
+.textContainer p {
+    border: 0.3vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    border-bottom: 0.6vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    border-radius:0.5vw;
+    margin-right: 1%;
+    margin-left: 1%;
+    padding: 1%;
+    min-width:96%;
+    background-image: light-dark(linear-gradient(170deg in oklch, var(--light-outlinekleur), var(--light-accentkleur), var(--dark-groen-schaduwkleur)), linear-gradient(170deg in oklch, var(--dark-hoofdkleur), var(--dark-rood-outlinekleur)));
+}
+.favColor {
+    font-family: First Coffee, Yusei Magic;
+    font-size:clamp(1.5rem, 1.5vw, 2.5rem);
+    background-color: light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    text-shadow:none;
+}
+.textContainer img {
+    margin-right: 1.2vw;
+    margin-bottom: 1em;
+    width:auto;
+    height:17.6em;
+    border-radius:0.5vw;
+    background-color: light-dark(rgb(117, 128, 148), var(--dark-hoofdkleur));
+    border: 0.3vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    border-bottom: 0.6vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    float:right;
+    clear: right;
+    background-size: cover;}
+.textContainer table {
+    width:29em;
+    border: 0.3vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    border-bottom: 0.6vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    border-radius:0.5vw;
+    margin: 1vw;
+    margin-bottom: 1.5vw;
+    padding: 2%;
+    background-image: light-dark(linear-gradient(170deg in oklch, var(--light-outlinekleur), var(--light-accentkleur), var(--dark-groen-schaduwkleur)), linear-gradient(170deg in oklch, var(--dark-hoofdkleur), var(--dark-rood-outlinekleur)));
+}
+.textContainer th {
+    font-family: First Coffee, Yusei Magic;
+    font-weight:300
+}
+td {
+    width:70%;
+}
+th, td {
+    border:0.15vw solid light-dark(var(--light-borderkleur), var(--dark-borderkleur));
+    padding:1.5%;
+}
+.lowerTable {
+    width:96.5% !important;
+    margin-bottom: 2vw !important;
+}
+.introText {
+    margin-top: 5em;
+    @media (width < 60em) {
+        margin-top: 8em;
+    }
+}
+.introText p {
+    border: 0.15vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    border-bottom: 0.4vw solid light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    width:45%;
+}

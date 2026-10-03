@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="nl" id="htmlTheme" class="lightTheme">
+<head>
+    <title>Homepage - Digital Garden</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="./images/favicon/favicon.svg">
+    <link rel="shortcut icon" href="./images/favicon/favicon.ico">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/grid-text-containers-base.css">
+<style>
+/*body {overflow-y: hidden;}*/
+
+.title {
+    font-family: First Coffee;
+    font-size:clamp(2rem, 3vw, 4.5rem);
+    text-align: center;
+    color: light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    text-shadow: 0.2vw 0.1vw 0.1vw light-dark(var(--light-outlinekleur), var(--dark-rood-outlinekleur));
+    padding-bottom:2em !important;
+    margin-bottom:0.3em !important;
+    z-index:2;
+}
+.title span {
+    font-family:Yusei Magic;
+    font-size: clamp(1rem, 1vw, 2rem);
+    background-image: none;
+    border:none;
+    width:auto;
+}
+img {
+    min-height:25%;
+    height:25vw;
+    width:auto;
+}
+#headerImg {
+    position: absolute;
+    pointer-events: none;
+    left:-24%;
+    max-height:30vw;
+    height:50%;
+    background-color: unset;
+    border:none;
+    z-index:1;
+    @media (width < 30em) {
+        left:-5%;
+        bottom:-5%;
+        max-height:50vw;
+    }
+}
+#homeMenu {
+    position: static;
+    width:100%;
+    min-height:40vh;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+#homeMenu > * {
+    font-size: 1.5em;
+    margin:2%;
+    min-width:30%;
+    width:auto;
+    height:auto;
+    max-height:3em;
+    @media (width < 30em) {
+        font-size: 1em;
+        min-width:40%;
+        max-height:4em;
+    }
+}
+.textContainer {
+    overflow:visible !important;
+    margin-top:1em;
+    min-height:37em;
+    align-items: center;
+    @media (width < 30em) {
+        width: 90% !important;
+    }
+}
+.textContainer p {
+    margin-top:5.5%;
+}
+.textContainer img {
+    width:auto;
+    height:3.6em;
+    margin:0.5%;
+    border:none;
+    background-color: unset !important;
+}
+.webring li { /*knop waar random op staat*/
+    text-align:center;
+    width:25%;
+    padding:1%;
+    list-style: none;
+}
+.webring ul {
+    width:40em;
+}
+.webringContainer {
+    min-height: 12em;
+    max-height: 12em;
+    overflow: hidden;
+}
+button /*dialog knoppen*/{
+    color: light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    font-family:First Coffee;
+    font-size:clamp(1rem, 1vw, 1.5rem);
+    width:14vw;
+    height:2em;
+    padding: 0.4%;
+    margin-left:2vw;
+    border-radius: 0.5vw;
+    background-image: light-dark(linear-gradient(to bottom left, var(--light-hoofdkleur), var(--light-borderkleur), var(--light-hoofdkleur)), linear-gradient(to bottom left, var(--dark-groen-schaduwkleur), var(--dark-knop-shine), var(--dark-groen-schaduwkleur)));
+    border:0.15vw solid light-dark(var(--light-borderkleur), var(--dark-borderkleur));
+    outline: 0.2em solid light-dark(var(--light-outlinekleur), var(--dark-groen-schaduwkleur));
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    text-shadow: 0.1em 0.1em 0.1em light-dark(var(--light-outlinekleur), var(--dark-groen-schaduwkleur));
+    box-shadow: inset 0 0 2vw light-dark(rgba(57, 79, 152, 0.5), rgba(28, 60, 36, 0.5));
+}
+button:hover{
+    box-shadow: inset 0 0 0.5vw 0.2vw light-dark(var(--light-borderkleur), var(--dark-borderkleur));
+    transform: scale(1.03, 1.04);
+}
+button:active{
+    transition: all 50ms;
+    transform: scale(0.9)
+}
+dialog {
+    width:45%;
+    color: light-dark(var(--light-tekstkleur), var(--dark-tekstkleur));
+    background-color: transparent;
+    background-image: light-dark(linear-gradient(to bottom right in oklch, rgba(58, 108, 196, 0.6), rgba(151, 218, 103, 0.3), rgba(58, 108, 196, 0.6)), linear-gradient(to bottom right, rgb(159, 109, 97), rgba(245, 200, 200, 0.7), rgb(159, 109, 97)));
+    border-radius:0.5vw 0.5vw 1.5vw 1.5vw;
+    @media (width < 30em) {
+        width: 86% !important;
+    }
+}
+dialog p {
+    padding:0.1em !important;
+}
+#cookieImg {
+    height:10em;
+}
+</style>
+</head>
+<body>
+
+<article class="textContainer">
+    <img id="headerImg" src="./images/export-rosie-sitting-floating.png" alt="">
+    <p class="title">{Digital Garden}
+        <span>Geologie, Characters, Ideeën</span></p>
+    <nav id="homeMenu">
+    <a class="btn-style" href="./html/interactief.html">Interacties<img src="./images/export-corpa.png" alt=""></a>
+    <a class="btn-style" href="./html/characters.html">Characters<img src="./images/export-abbigail.png" alt=""></a>
+    <a class="btn-style" href="./html/inspiration-garden.html">Garden<img src="./images/export-sungaia.png" alt=""></a>
+    <a class="btn-style" href="./html/aantekeningen.html">Notes<img src="./images/export-rosie-searchsearch.png" alt=""></a>
+    <a class="btn-style" href="./html/over.html">Over<img src="./images/export-my-char.png" alt=""></a>
+    <a class="btn-style" href="./html/remark-presentatie.html">Remark<img src="./images/export-globus.png" alt=""></a>
+    </nav>
+</article>
+<button id="lightDark" class="btn-style">Light/Dark!</button>
+<button id="btt" class="btn-style">Back to top!</button>
+<script src="./js/back-to-top.js"></script>
+<script src="./js/light-dark-theme-switch.js"></script>
+<img class="backgroundImg" src="https://cdn.pixabay.com/photo/2023/07/01/18/21/water-8100724_1280.jpg" alt="Alpen">
+
+
+
+<article class="textContainer webringContainer">
+    <!-- Importeer het webring component, voeg jouw eigen domein toe in data-page-->
+    <script
+      data-page="https://christina.keultjes.net/digital-garden/new-index.html"
+      src="http://digitaaltuintje.nl/webring.js"
+      defer
+    >
+    /*
+        document.addEventListener('DOMContentLoaded', function load() {
+          document.getElementById('cookieModal').style.display = 'none';
+        });
+    */
+        </script>
+        <footer>
+      <nav>
+        <button class="btn-style" commandfor="cookieModal" command="show-modal" style="width:30em; max-width:80%; text-align: left;">
+          Cookies toestaan?
+        </button>
+      </nav>
+    </footer>
+
+    <dialog id="cookieModal">
+      <form method="dialog">
+        <p>
+          <img id="cookieImg" src="./images/export-rosie-chibi-cookie-offer.png" alt="Chibi character offering cookie">
+          Er worden op deze site standaard cookies gebruikt vanuit het hostingplatform en royalty-vrije afbeeldingensite Pixabay. Daarnaast zijn er aanvullende cookies nodig voor het inladen van de Digitaal Tuintje webring. Sta je deze cookies toe?
+          <br><br>
+        </p>
+        <button onclick="setCookie()">Allow</button>
+        <button onclick="unsetCookie()">Deny</button>
+      </form>
+    </dialog>
+    <script>
+        function setCookie() {
+            console.log('Keuze was Allow');
+            document.getElementById("cookieModal").style.display = 'none';
+        }
+        function unsetCookie() {
+            console.log('Keuze was Deny');
+            const cookieDialog = document.getElementById("cookieModal");
+            const CookieImg = document.getElementById("cookieImg");
+            cookieImg.src = ("./images/export-rosie-chibi-cookie-glare.png");
+            cookieDialog.showModal();
+        }
+    </script>
+</article>
+</body>
